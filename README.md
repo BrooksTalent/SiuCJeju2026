@@ -1,27 +1,15 @@
 # 濟州小詩生日之旅 2026
 
-手機優先的純 HTML / CSS 網站，無需安裝任何套件。
+公開網站：https://brookstalent.github.io/SiuCJeju2026/
 
-## 頁面
+保留原水彩封面，加入生日開場、五日真實行程、酒店租車、Google Maps、天氣快照及美食清單。手機優先，無外部字體或追蹤。
 
-- `index.html`：保留原圖的完整水彩封面，以及真正 HTML 導覽。
-- `journal.html`：適合長文的閱讀內頁示範。示範文案不是已確認行程。
-- `style-guide.html`：封面與內頁兩種風格的可瀏覽參考板、配色與排版規則。
-- `styles.css`：共用設計變數與元件樣式。
-- `assets/jeju-cover.png`：使用者提供的原始封面插畫。
+- index.html：原封面；opening.html：生日祝福；journal.html：旅行目錄。
+- day1.html 至 day5.html：每日行程與可勾選練習，勾選僅儲存在目前瀏覽器。
+- stay.html、weather.html、food.html、notes.html：住宿租車、預報、美食及待確認事項。
+- docs/濟州小詩生日之旅.md：行程資料來源，包含來源連結與預報時間。
+- styles.css、style-guide.html：共用樣式與設計參考。
 
-直接打開 `index.html` 即可閱讀。若有 Node.js，可使用 `node scripts/preview.mjs`，然後開啟終端顯示的本機網址。
+更新 MD 後，執行 npm install 及 npm run render 產生 HTML；npm run build 驗證本機連結及封面，輸出 dist。已產生的 HTML 可直接使用，瀏覽網站不需安裝套件。
 
-## 設計規格
-
-以 390px 手機寬度為基準，320px 起自適應；不是固定高度截圖。封面原圖等比例呈現，不裁切人物或插畫。封面內文字是原畫的一部分，需要改標題時須另行修改圖片；內頁文字與所有導覽均可直接修改 HTML。
-
-正文使用本機繁中無襯線字體，16px、1.85 倍行高；標題優先楷體，依裝置可用字體回退。內頁最大 704px，封面最大 540px。色彩、間距、字體和圓角在 `styles.css` 的 `:root` 集中管理。水彩粉用於背景，正文使用深啡，連結使用較深玫瑰色。
-
-## 驗證與發佈
-
-`node scripts/build.mjs` 檢查各頁的本機連結及圖片，並將可部署的網站複製至 `dist/`。原始頁面也可直接由任何靜態網頁主機提供。
-
-目前只建立 GitHub 原始碼基礎，未啟用公開網站。若日後使用 GitHub Pages，可按帳戶方案與 repository 可見性設定，選擇根目錄靜態頁面作來源。
-
-封面由使用者提供，未授予第三方重用授權。沒有加入追蹤、外部字體、API 或預訂資訊。
+GitHub Pages 使用 main 分支根目錄。預報為2026年9月6日快照，不會自動更新。未確認的安排保留待確認字樣。封面由使用者提供，未授予第三方重用授權。
