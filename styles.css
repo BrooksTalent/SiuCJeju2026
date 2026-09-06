@@ -1,0 +1,99 @@
+/* SiuCJeju2026 · 共用視覺語言：水彩封面 / 紙感閱讀內頁。
+   封面原畫負責插畫與紋理；HTML 文字、導覽與內頁保持可讀、可選取。
+   H5 指手機優先網頁，並非固定紙張尺寸。基準 390px，支援 320px 起。 */
+:root {
+  --color-paper: #fffdf9;
+  --color-blush: #fae3df;
+  --color-pink: #eea5aa;
+  --color-sea: #d9edf4;
+  --color-sage: #b8c9a4;
+  --color-tangerine: #edaa54;
+  --color-ink: #59483d;
+  --color-muted: #78665a;
+  --color-accent: #974f58;
+  --color-line: #e6d8ce;
+  --font-body: "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-title: "Kaiti TC", "DFKai-SB", "KaiTi", serif;
+  --font-latin: Georgia, "Times New Roman", serif;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --reading-width: 44rem;
+  --radius: 1.125rem;
+  --shadow-paper: 0 14px 45px #59483d12;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; background: var(--color-blush); color: var(--color-ink); font: 1rem/1.85 var(--font-body); }
+a { color: var(--color-accent); text-underline-offset: .3em; }
+a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 5px; }
+img { display: block; max-width: 100%; height: auto; }
+h1,h2,h3,p { margin-top: 0; }
+h1,h2,h3 { line-height: 1.4; text-wrap: balance; }
+h1,h2 { font-family: var(--font-title); }
+h1 { font-size: clamp(2rem, 7vw, 3rem); letter-spacing: .06em; }
+h2 { font-size: 1.65rem; }
+h3 { font-size: 1.125rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.cover-body { background: radial-gradient(ellipse at 10% 20%, var(--color-sea), transparent 55%), #f5e7e3; }
+.cover-page { position: relative; max-width: 540px; margin-inline: auto; background: var(--color-paper); box-shadow: var(--shadow-paper); }
+.cover-art { width: 100%; }
+.cover-nav { padding: 1.25rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom)); text-align: center; background: var(--color-paper); }
+.button { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 52px; padding: .75rem 1.5rem; border: 1px solid #dfb3ae; border-radius: 99px; background: var(--color-blush); color: var(--color-ink); font-weight: 600; text-decoration: none; }
+.button:hover { background: #f4d2ce; }
+.quiet-link { display: inline-block; padding: .65rem; font-size: .875rem; }
+.paper-page { max-width: var(--reading-width); margin: 2.5rem auto; background: var(--color-paper); box-shadow: var(--shadow-paper); }
+.page-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--color-line); font-size: .875rem; }
+.page-nav a { padding-block: .4rem; }
+.eyebrow { font: .875rem/1.6 var(--font-body); letter-spacing: .2em; color: var(--color-muted); }
+.journal-header { position: relative; padding: 3.5rem 2rem 2rem; background: linear-gradient(135deg, #fae3dfb0, #fffdf900 75%); }
+.journal-header::before, .sample-cover::before { content: ""; position: absolute; width: 7rem; height: 1.65rem; top: .65rem; left: calc(50% - 3.5rem); transform: rotate(-5deg); opacity: .6; background: repeating-linear-gradient(90deg, #eeb5b199 0 12px, #fff8 12px 24px), repeating-linear-gradient(0deg, #eeb5b1 0 12px, #fff7 12px 24px); }
+.journal-header h1 { margin-bottom: .8rem; }
+.intro { margin-bottom: 0; color: var(--color-muted); }
+.draft-label { display: inline-block; padding: .2rem .7rem; border-radius: 99px; background: var(--color-sea); font-size: .875rem; }
+.journal-content { padding: 1rem 2rem 2.5rem; }
+.chapter { padding-block: 1.75rem; border-bottom: 1px solid var(--color-line); }
+.chapter:last-child { border-bottom: 0; }
+.chapter-number { display: block; font: italic 1rem/1.5 var(--font-latin); color: var(--color-accent); margin-bottom: .5rem; }
+.chapter h2 { margin-bottom: 1rem; }
+.chapter p { margin-bottom: 1rem; }
+.note { margin: 1.5rem 0 0; padding: 1.125rem 1.25rem; background: #f3f5ed; border-left: 3px solid var(--color-sage); border-radius: 0 var(--radius) var(--radius) 0; }
+.note p:last-child { margin-bottom: 0; }
+.details { margin: 0; }
+.details div { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; padding: .75rem 0; border-bottom: 1px dashed var(--color-line); }
+.details dt { color: var(--color-muted); }
+.details dd { margin: 0; }
+.page-footer { text-align: center; padding: 1.5rem; border-top: 1px solid var(--color-line); }
+.page-footer p { font: italic 1.25rem var(--font-latin); color: var(--color-accent); margin-bottom: .5rem; }
+.guide-body { background: #f1eee9; }
+.guide { max-width: 1120px; padding: 2rem; margin: auto; }
+.guide-header { max-width: 680px; padding-block: 2rem; }
+.guide-header h1 { margin-bottom: .8rem; }
+.style-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.style-card { background: var(--color-paper); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow-paper); }
+.style-card h2 { margin-bottom: .5rem; }
+.sample-cover { position: relative; margin: 1rem auto; max-width: 300px; }
+.sample-cover img { width: 100%; }
+.sample-cover::before { display: none; }
+.reading-sample { padding: 2rem 1.25rem; margin-block: 1.5rem; border: 1px solid var(--color-line); background: linear-gradient(150deg, #fae3df88, transparent 35%), var(--color-paper); }
+.reading-sample h3 { font-family: var(--font-title); font-size: 1.5rem; }
+.reading-sample p { margin-bottom: 1rem; }
+.palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-block: 1.5rem; }
+.swatch { border: 1px solid var(--color-line); border-radius: .75rem; overflow: hidden; background: var(--color-paper); }
+.swatch-color { height: 64px; background: var(--swatch); border-bottom: 1px solid var(--color-line); }
+.swatch p { padding: .7rem; margin: 0; font-size: .875rem; }
+.swatch code { display: block; color: var(--color-muted); }
+.guide-section { margin-top: 2.5rem; }
+.rules { padding-left: 1.3rem; }
+.rules li { margin-block: .65rem; }
+@media (max-width: 720px) {
+  .paper-page { margin: 0 auto; }
+  .journal-header { padding: 3.5rem 1.5rem 1.5rem; }
+  .journal-content { padding: .5rem 1.5rem 2rem; }
+  .guide { padding: 1.25rem; }
+  .style-grid { grid-template-columns: 1fr; }
+  .palette { grid-template-columns: repeat(2, 1fr); }
+}
+@media print { .page-nav,.cover-nav,.quiet-link { display: none; } body { background: white; } .paper-page { margin: 0; box-shadow: none; } }
