@@ -106,3 +106,15 @@ h3 { font-size: 1.125rem; }
 .itinerary{overflow-wrap:anywhere}.itinerary h3{margin:1.8rem 0 1rem;padding-bottom:.5rem;border-bottom:1px dashed var(--color-line)}.itinerary ul{padding-left:1.3rem}.itinerary li{margin:.65rem 0}.itinerary li>ul{font-size:.9rem}.itinerary a{word-break:break-word}.places{padding:1rem;background:#f8f1e9;border-radius:1rem;margin:1.5rem 0}.places summary{cursor:pointer;font-weight:600;min-height:30px}.places a[href*="google.com/maps"]{display:inline-block;background:var(--color-paper);padding:.25rem .75rem;border:1px solid var(--color-line);border-radius:2rem;margin:.35rem 0}
 .practice{display:flex;align-items:center;gap:.8rem;min-height:44px}.practice input{width:22px;height:22px;accent-color:var(--color-accent);flex-shrink:0}li:has(>.practice){list-style:none}.save-note{font-size:.75rem;color:var(--color-muted)}.day-pager{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--color-line);padding-top:1.5rem;margin-top:2rem}.table-scroll{overflow-x:auto;max-width:100%;margin:1.5rem 0}table{border-collapse:collapse;min-width:540px;font-size:.85rem}th,td{padding:.75rem;border-bottom:1px solid var(--color-line);text-align:left}th{background:var(--color-blush)}.document-link{text-align:center;font-size:.85rem;margin:2rem 0 0}
 @media(max-width:380px){.journal-content{padding-inline:1rem}.day-card{padding:1rem;gap:.65rem}.day-card strong{font-size:.9rem}.birthday{padding-inline:1rem}}
+/* Clear navigation and mobile location cards */
+.button { justify-content: center; text-align: center; }
+.page-nav a { display: inline-flex; align-items: center; gap: .5rem; }
+.nav-icon { width: 18px; height: 18px; flex: 0 0 auto; }
+.location-list { display: grid; gap: .8rem; margin: 1.25rem 0 2rem; }
+.location-card { display: flex; align-items: flex-start; gap: .85rem; padding: 1rem; border: 1px solid var(--color-line); border-radius: 1rem; background: linear-gradient(120deg, #fae3df55, #fffdf9); }
+.location-card > div { min-width: 0; flex: 1; }
+.location-card strong { font-size: .95rem; font-weight: 600; }
+.direction-badge { min-width: 2.8rem; max-width: 5rem; padding: .3rem .45rem; background: var(--color-sea); border-radius: .6rem; text-align: center; font: 600 .8rem/1.5 var(--font-body); }
+.location-map { margin-top: .4rem; font-size: .85rem; }
+.location-map a { display: inline-block; padding: .3rem .8rem; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 2rem; }
+.direction-key { font-size: .8rem; color: var(--color-muted); }
