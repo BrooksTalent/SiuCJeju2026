@@ -1,14 +1,15 @@
 import { readFile, access, mkdir, copyFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import './render-cafes.mjs';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const pages = ['index.html', 'opening.html', 'journal.html', 'style-guide.html', 'stay.html', 'weather.html', 'food.html', 'notes.html', ...Array.from({length:5}, (_,i)=>`day${i+1}.html`)];
-const files = [...pages, 'styles.css', 'journal.js', 'cover-music.css', 'cover-music.js', 'assets/cover-music.mp3', 'docs/濟州小詩生日之旅.md', 'assets/jeju-cover.png', '.nojekyll'];
+const pages = ['index.html', 'opening.html', 'journal.html', 'cafes.html', 'style-guide.html', 'stay.html', 'weather.html', 'food.html', 'notes.html', ...Array.from({length:5}, (_,i)=>`day${i+1}.html`)];
+const files = [...pages, 'styles.css', 'cafes.css', 'journal.js', 'cover-music.css', 'cover-music.js', 'assets/cover-music.mp3', 'docs/濟州小詩生日之旅.md', 'assets/jeju-cover.png', '.nojekyll'];
 for (const page of pages) {
   const html = await readFile(resolve(root, page), 'utf8');
   if (!html.includes('lang="zh-Hant"') || !html.includes('name="viewport"')) throw new Error(`Missing language or viewport: ${page}`);
   for (const [, link] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
-    if (/^(https?:|#|mailto:)/.test(link)) continue;
+    if (/^(https?:|#|mailto:|tel:)/.test(link)) continue;
     await access(resolve(root, link));
   }
 }
