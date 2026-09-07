@@ -7,9 +7,13 @@
   <meta name="description" content="濟州小詩生日之旅 · 2026 年 9 月。一本粉紅水彩旅行手帳。">
   <title>濟州小詩生日之旅 2026</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cover-music.css">
+  <script src="cover-music.js" defer></script>
 </head>
 <body class="cover-body">
   <main class="cover-page">
+    <audio id="cover-music" src="assets/cover-music.mp3" preload="metadata" loop></audio>
+    <button class="music-toggle" type="button" aria-controls="cover-music" aria-pressed="false" hidden><span aria-hidden="true">♫</span> <span id="music-label">播放封面音樂</span></button>
     <h1 class="sr-only">濟州小詩生日之旅 2026</h1>
     <img class="cover-art" src="assets/jeju-cover.png" width="941" height="1672" alt="粉紅水彩濟州生日旅行封面：撕紙標題、濟州環島路線、山茶花、橘子，以及站在粉紅車旁的情侶。2026 年 9 月。" fetchpriority="high">
     <nav class="cover-nav" aria-label="旅行手帳導覽">
